@@ -1,0 +1,5 @@
+package com.nivket.myfistjavaproject.dao;
+
+public class UserDAO {
+
+}

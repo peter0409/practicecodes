@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="psbortal" default="deploy" basedir=".">
+	
+	<!-- Define application properties-->
+	
+	<property name="war.name" value="psbportal" />
+
+
+	<property name="src.dir" value="${basedir}/src" />
+
+
+	<property name="webapp.dir" value="${basedir}/WebContent" />
+
+
+	<property name="lib.dir" value="${webapp.dir}/WEB-INF/lib" />
+
+
+	<property name="build.bin" value="${basedir}/ant-build/bin" />
+
+
+	<property name="buildwar.dest"
+		value="${basedir}/ant-build/warsrc" />
+
+
+	<property name="war.dest" value="${basedir}/ant-build/war" />
+
+
+	<property name="tomcat.home"
+		value="C:\BootCampNov2019\tools\apache-tomcat-9.0.27" />
+
+	
+	<!-- Set classpath -->
+	<path id="classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${tomcat.home}/lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<!-- creat directories (folders)-->
+	<target name="init">
+		<mkdir dir="${build.bin}" />
+		<mkdir dir="${buildwar.dest}" />
+		<mkdir dir="${war.dest}" />
+
+		<!-- copy non java files -->
+		<copy todir="${buildwar.dest}" overwrite="true">
+			<fileset dir="${webapp.dir}">
+				<exclude name="/WEB-INF/classes/**" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- compile .java files -->
+	<target name="compile" depends="init">
+		<echo message="Build: " />
+		<javac srcdir="${src.dir}" destdir="${build.bin}"
+			encoding="utf-8" includeantruntime="">
+			<classpath refid="classpath" />
+		</javac>
+
+		<!-- copy .class files (Bytecode) -->
+		<copy todir="${buildwar.dest}/WEB-INF/classes" overwrite="true">
+			<fileset dir="${build.bin}">
+				<include name="**/*.class" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- generate war file -->
+	<target name="build.war" depends="compile">
+		<echo message="Building war: " />
+		<war warfile="${war.dest}/${war.name}.war"
+			webxml="${buildwar.dest}/WEB-INF/web.xml">
+			<fileset dir="${buildwar.dest}" />
+		</war>
+	</target>
+
+	<!-- deploy on tomcat -->
+	<target name="publish" depends="build.war">
+		<!-- delete exist project in tomcat -->
+		<delete dir="${tomcat.home}/webapps/${war.name}" />
+		<delete file="${tomcat.home}/webapps/${war.name}.war" />
+
+		<!-- copy war file to ${tomcat.home}/webapps -->
+		<copy todir="${tomcat.home}/webapps" overwrite="true">
+			<fileset dir="${war.dest}">
+				<filename name="${war.name}.war" />
+			</fileset>
+		</copy>
+
+		<!-- delete unimportant directories after use -->
+		<delete dir="${build.bin}" />
+		<delete dir="${buildwar.dest}" />
+		<delete dir="${war.dest}" />
+
+	</target>
+
+	<target name="deploy" depends="publish, tomcat_start">
+
+		<echo>Deployed...</echo>
+
+	</target>
+
+	<target name="tomcat_start" depends="tomcat_stop">
+		<echo>Tomcat starting...</echo>
+		<exec executable="cmd" dir="${tomcat.home}/bin"
+			failonerror="false" append="true">
+			<env key="CATALINA_HOME" path="${tomcat.home}" />
+			<arg value="/c startup.bat" />
+		</exec>
+	</target>
+
+	<target name="tomcat_stop">
+		<echo>Shutting down Tomcat....</echo>
+		<exec executable="cmd" dir="${tomcat.home}/bin"
+			failonerror="false" append="true">
+			<env key="CATALINA_HOME" path="${tomcat.home}" />
+			<arg value="/c" />
+			<arg value="shutdown.bat" />
+		</exec>
+	</target>
+
+</project>

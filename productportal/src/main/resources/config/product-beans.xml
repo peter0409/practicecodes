@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+   http://www.springframework.org/schema/beans     
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd
+   http://www.springframework.org/schema/jdbc 
+   http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd
+   http://www.springframework.org/schema/tx
+   http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<context:component-scan
+		base-package="com.nivtek.productportal" />
+	<context:annotation-config />
+
+	<bean id="productService"
+		class="com.nivtek.productportal.service.ProductServiceImpl" />
+
+	<bean id="productDAO"
+		class="com.nivtek.productportal.dao.ProductDAOImpl" />
+
+	<!-- <bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="datasource" />
+	</bean>
+
+	For the Transactions
+	<tx:annotation-driven proxy-target-class="true"
+		transaction-manager="transactionManager" />
+
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="datasource" />
+	</bean>
+
+	<bean id="datasource"
+		class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="resourceRef" value="true" />
+		<property name="jndiName" value="jdbc/autoquest" />
+	</bean> -->
+	<!-- For Tomcat need to append java:/comp/env/ before jndiName Value -->
+
+	<!-- <bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+		<property name="driverClassName" value="${db.driver}" /> <property name="url" 
+		value="${db.url}" /> <property name="username" value="${db.user}" /> <property 
+		name="password" value="${db.pass}" /> </bean> -->
+
+	<!-- <bean id="dbproperties"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location"
+			value="classpath:autoquestpro/config/autoquestprodb.properties" />
+	</bean> -->
+
+</beans>

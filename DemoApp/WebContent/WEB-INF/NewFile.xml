@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<int-param> 
+<param-name>name</param-name>
+	      <param-value>sukesh</param-value>
+	      </int-param>
+
+
+<context-param>
+	      <param-name>Phone</param-name>
+	      <param-value>Samsung</param-value>
+	</context-param>

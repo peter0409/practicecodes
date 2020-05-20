@@ -1,0 +1,24 @@
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+	<a class="navbar-brand" href="">ProductManagement<span
+		class="font-weight-lighter">Pro</span></a>
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+		<ul class="navbar-nav mr-auto font-weight-lighter">
+			<li class="nav-item"><a class="nav-link"
+				href="${request.contextPath}">HOME</a></li>
+		</ul>
+
+		<span class="navbar-text align-right"> Welcome to Product Management!
+		</span>
+
+	</div>
+
+</nav>

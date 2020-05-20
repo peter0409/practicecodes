@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="productDAO" class="com.nivtek.springapp.dao.ProductDAO"></bean>
+
+
+	<bean id="productDAOHib"
+		class="com.nivtek.springapp.dao.ProductDAOHib"></bean>
+
+
+	<bean id="orderDAO" class="com.nivtek.springapp.dao.OrderDAO"></bean>
+
+	<bean id="orderService"
+		class="com.nivtek.springapp.service.OrderService"  init-method ="initOrderservice" destroy-method ="destoryOrderService">
+		
+		
+		<constructor-arg ref="productDAO"></constructor-arg>
+
+        <constructor-arg  ref ="orderDAO"></constructor-arg>
+
+
+	<!-- 	<property name="productDAO" ref="productDAOHib"></property>
+
+		<property name="orderDAO" ref="orderDAO"></property> -->
+	</bean>
+
+
+
+
+</beans>

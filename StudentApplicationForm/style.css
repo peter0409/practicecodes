@@ -1,0 +1,84 @@
+
+		.main-wrapper{
+			max-width: 850px;
+			width: 100%;
+			margin: 20px auto;
+			background-color: #f1f1f1;
+			padding: 10px;
+		}
+		
+		.half{
+			display: inline-block;
+			width: 49%;
+		}
+		
+		.half input{
+			width: 100%;
+		}
+		
+		.form-row:after,
+		.full-size:after{
+			content: " ";
+			clear: both;
+			display: block;
+		}
+		
+		.form-wrapper .form-row span {
+			float: left;
+			margin: 0 10px 0 0;
+			width: 170px;
+		}
+		
+		.form-wrapper .form-row span label{
+			display: block;
+			font-size: 11px;
+			margin: 0 0 10px 0;
+		}
+		/*full size and half size*/
+		.full-size{
+			width: 100%;
+		}
+		
+		.half-size{
+			width: 49%;
+			display: inline-block;
+		}
+		
+		.form-wrapper .form-row .full-size span,
+		.form-wrapper .form-row .half-size span,
+		.form-wrapper .form-row .half-size select{
+			float: none;
+			display: block;
+		}
+		
+		.form-wrapper .form-row .full-size input,
+		.form-wrapper .form-row .half-size input,
+		.form-wrapper .form-row .half-size select{
+			width: 100%;
+		}
+		table{
+			margin: 20px 0px;
+			border-collapse: collapse;
+		}
+		
+		table, td,tr,th {
+			border: 1px solid #cacaca;
+		}
+		.main-header1{
+		color:#22aa55;
+		text-align:center;
+		}
+		.footer-name{
+		color: red;
+		text-align: center;
+		}
+		
+		ul{
+			list-style: none;
+		}
+		
+		ul li{
+			display: block;
+			padding: 5px;
+			margin-right: 5px;
+		}

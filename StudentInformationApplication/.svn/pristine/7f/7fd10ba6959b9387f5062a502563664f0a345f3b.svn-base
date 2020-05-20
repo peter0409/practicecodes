@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My first html form</title>
+	<style>
+		
+		.main-wrapper{
+			max-width: 850px;
+			width: 100%;
+			margin: 20px auto;
+			background-color: #f1f1f1;
+			padding: 10px;
+		}
+		
+		.half{
+			display: inline-block;
+			width: 49%;
+		}
+		
+		.half input{
+			width: 100%;
+		}
+		
+		.form-row:after,
+		.full-size:after{
+			content: " ";
+			clear: both;
+			display: block;
+		}
+		
+		.form-wrapper .form-row span {
+			float: left;
+			margin: 0 10px 0 0;
+			width: 170px;
+		}
+		
+		.form-wrapper .form-row span label{
+			display: block;
+			font-size: 11px;
+			margin: 0 0 10px 0;
+		}
+		/*full size and half size*/
+		.full-size{
+			width: 100%;
+		}
+		
+		.half-size{
+			width: 49%;
+			display: inline-block;
+		}
+		
+		.form-wrapper .form-row .full-size span,
+		.form-wrapper .form-row .half-size span,
+		.form-wrapper .form-row .half-size select{
+			float: none;
+			display: block;
+		}
+		
+		.form-wrapper .form-row .full-size input,
+		.form-wrapper .form-row .half-size input,
+		.form-wrapper .form-row .half-size select{
+			width: 100%;
+		}
+		table{
+			margin: 20px 0px;
+		}
+	</style>
+</head>
+
+<body>
+	<!--Main Wrapper-->
+	<div class="main-wrapper">
+		<!--thisis headerOnly-->
+		<div class="main-header">
+			<h1>student application form</h1>
+			<p class="test-paragraph" id="test-paragraph">This is your form description,click here to edit.</p>
+		</div>
+		<hr/>
+		
+		<!--Form Starts Here-->
+		<div class="form-wrapper">
+			<form action="/" method="post">
+				<!--This Div Holds Name inputs only-->
+				<div class="form-row">
+					<h2>Name</h2>
+					
+					<span>				
+						<input type="text" name="firstname" id="firstname" />
+						<label for="firstname">firstname</label>
+					</span>
+					
+					<span>
+						<input type="text" name="middlename" id="middlename" />
+						<label for="middlename">middlename</label>
+					</span>
+					
+					<span>
+						<input type="text" name="lastname" id="lastname" />
+						<label for="lastname">lastname</label>
+					</span>
+					
+					<!--image link-->
+					<a href="http://www.pdf995.com/samples/pdf.pdf" target="_blank" title="document link click here"><img src="https://lh5.googleusercontent.com/proxy/g1H1VqupWKXMQ0S0_TPiOBpJwIq7ytfutx-kLXEeh0T_Gd1gR3RXYbJhezep28bIRpLeDlFH7ZrwFlqfW5E6mtuhU7TRE0pjHr-WqFL3Mq9B1x5-KidPlQHN6ffhfVNltLE" width="150" alt="click here image"></a>
+					
+				</div>
+				
+				<!--This Div Holds Date inputs only-->
+				<div class="form-row">
+					<h2>Date</h2>
+					<span>
+						<input type="number" name="month" id="month" />
+						<label>mm</label>
+					</span>
+					
+					<span>
+						<input type="number" name="day" id="day" />
+						<label>dd</label>
+					</span>
+					
+					<span>
+						<input type="number" name="year" id="year" />
+						<label>yyyy</label>
+					</span>
+					
+				</div>
+				<!--This Div snn inputs only-->
+				<div class="form-row">
+					<h3>SNN</h3>
+					<span>
+						<input type="text" name="snn"/>
+					</span>
+				</div>
+				
+				<!--This Div Address inputs only-->
+				<div class="form-row">
+					<h2>Address</h2>
+					
+					<div class="full-size">
+						<span>
+							<input type="text" name="Street Address"/>
+							<label>Street Address</label>
+						</span>
+					</div>
+					
+					<div class="full-size">
+						<span>
+							<input type="text" name="Address line2">
+							<label><br>Address line2</label>
+						</span>
+					</div>
+					
+					<div class="half-size">
+						<span>
+							<input type="text" name="city"/>
+							<label>City</label>
+						</span>
+					</div>
+					
+					<div class="half-size">
+						<span>
+							<input type= "text" name="State/Province/Region">
+							<label>State/Province/Region
+						</span>
+					</div>
+					
+					<div class="half-size">
+						<span>
+							<input type="text" name="Postal/Zip"/>
+							<label>Postal/Zip</label>
+						</span>
+					</div>
+					
+					<div class="half-size">
+						<span>
+							<select class="Country">
+								<option value=""></option>
+								<option value= "China">China</option>
+								<option value ="USA">USA</option>
+								<option value ="Japan">Japan</option>
+							</select>
+							<label>Country</label>
+						</span>
+					</div>
+				</div>
+				
+				<!-- PHone Number Section-->
+				<div class="form-row">
+				    <h2>Phone</h2>
+					<span>
+						<input type="number" name="number1" size=3>
+						<label for="number1">###</label>
+					</span>
+					 
+					<span>
+						<input type="number" name="number2" size=3>
+						<label for="number2">###</label>
+					</span>
+					 
+					<span>
+						<input type="number" name="number3" size=4>
+						<label for="number3">####</label>
+					</span>
+				</div>
+				
+				<!-- Email Address-->
+				<div class="form-row">
+				    <h2>Email</h2>
+					<span>
+						<input type="text" name= "email">
+					</span>
+				</div>
+				
+				<!--checkboxes-->
+				<div class="form-row">
+					<h2>Checkboxes</h2>
+				    <input type="checkbox" name="box" value="First option">First option<br>
+					<input type="checkbox" name="box" value="Second option">Second option<br>
+					<input type="checkbox" name="box" value="third option">third option<br>
+				</div>
+				
+				<!--Table Section-->
+				<div class="form-row">
+					<table>
+						<tr>
+							<th>Description</th>
+							<th>Link</th>
+						</tr>
+						<tr>
+							<td>Learn Java from here: </td>
+							
+							<td><a href="http://www.javatpoint.com">Click Here</a></td>
+						</tr>
+						<tr>
+							<td>Learn Database from here: </td>
+							
+							<td><a href="http://www.studytonight.com">Click Here</a></td>
+						</tr>
+					</table>
+				</div>
+				
+				<!-- Submit Button-->
+				<div class="form-row">
+					<input type="submit" value="SUBMIT" class="">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
+
+
+   
