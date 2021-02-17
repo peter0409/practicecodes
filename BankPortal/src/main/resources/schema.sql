@@ -1,0 +1,11 @@
+--DROP TABLE IF EXISTS transaction;
+--
+--CREATE TABLE transaction (
+--
+--      id BIGINT auto_increment NOT NULL PRIMARY KEY,
+--      merchant VARCHAR(40),
+--      amount DOUBLE,
+--      date DATE,
+--      location VARCHAR(40)
+--   
+--);

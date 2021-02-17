@@ -1,0 +1,5 @@
+date	merchant	amount	location
+07/02/2020	Costco	100.23	Lewisville,TX
+02/09/2020	India101	98.09	Irving,TX
+03/17/2020	Shell	4.89	Irving,TX
+04/28/2020	Walmart	106.98	Irving,TX

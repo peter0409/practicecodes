@@ -2,34 +2,27 @@ package com.nivtek.quoteinfo.entity;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="quote")
+//@Entity
+//@Table(name="quote")
 public class Quote {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name="amount")
+//	@Column(name="amount")
 	private double amount;
 	
-	@Column(name="quoteNumber")
+//	@Column(name="quoteNumber")
 	private int quoteNumber;
 	
-	@Column(name="term")
+//	@Column(name="term")
 	private int term;
 	
-	@Column(name="date")
+//	@Column(name="date")
 	private Date date;
 	
-	@Column(name="customer")
+//	@Column(name="customer")
 	private Customer customer;
 
 	/**

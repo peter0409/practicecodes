@@ -1,15 +1,12 @@
 package com.nivtek.quoteinfo.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-
-@Embeddable
+//@Embeddable
 public class Customer {
 
-	@Column(name="firstName")
+//	@Column(name="firstName")
 	private String firstName;
 	
-	@Column(name="lastName")
+	/* @Column(name="lastName") */
 	private String lastName;
 	/**
 	 * @return the firstName
